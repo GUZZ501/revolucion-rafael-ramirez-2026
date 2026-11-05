@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173c32">
+  <meta name="description" content="Nuestra historia nos reúne. La Escuela Primaria Rafael Ramírez te invita a conmemorar la Revolución Mexicana el 20 de noviembre de 2026. Hora y programa por confirmar.">
+  <title>20 de noviembre · Invitación Rafael Ramírez</title>
+  <link rel="icon" href="assets/emblema.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/paisaje-cine.jpg" as="image">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="cinema.css">
+  <link rel="stylesheet" href="boarding.css">
+  <script src="app.js" defer></script>
+</head>
+<body class="cover-visible cinematic">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="cover" id="portada">
+    <div class="cinema-landscape" aria-hidden="true"></div>
+    <video id="tren-video" class="train-film" playsinline preload="metadata" poster="assets/cine-poster.jpg" aria-hidden="true"><source src="assets/tren-introduccion.mp4" type="video/mp4"></video>
+    <div class="film-fallback-stage" aria-hidden="true"><img src="assets/locomotora.png" alt="" loading="lazy"><div class="fallback-smoke"></div></div>
+    <div class="cinema-shade" aria-hidden="true"></div>
+    <div class="cinema-grain" aria-hidden="true"></div>
+    <div class="cinema-topline"><span>Escuela Primaria <b>Rafael Ramírez</b></span><span>Una historia que nos une</span></div>
+    <button id="omitir" class="skip-film" type="button" hidden>Omitir entrada <span aria-hidden="true">↗</span></button>
+    <div class="cinema-cover-copy">
+      <span class="cinema-eyebrow"><i></i> 20 de noviembre de 2026 <i></i></span>
+      <div class="cinema-ornament" aria-hidden="true">✦</div>
+      <h1>Hay historias<br>que nunca dejan<br><em>de avanzar.</em></h1>
+      <p>Un viaje hacia nuestras raíces.<br>Una celebración que nos reúne.</p>
+      <button class="journey-button" id="abrir" type="button"><span class="journey-icon" aria-hidden="true">▶</span><span>Comenzar el viaje<small>Una experiencia con sonido</small></span><span class="journey-arrow" aria-hidden="true">↗</span></button>
+    </div>
+    <div class="cinema-bottomline"><span>REVOLUCIÓN MEXICANA</span><span class="cinema-bottom-center">HISTORIA <i>✦</i> TRADICIÓN <i>✦</i> COMUNIDAD</span><span>2026</span></div>
+    <div class="film-progress" aria-hidden="true"><span></span></div>
+    <p class="film-caption" aria-live="polite">Nuestra historia está por encontrarnos…</p>
+    <div class="school-intertitle" id="escuela-intertitulo" hidden aria-live="polite">
+      <div class="intertitle-border" aria-hidden="true"></div>
+      <div class="intertitle-flourish" aria-hidden="true">❦</div>
+      <p class="intertitle-school">Escuela Primaria</p>
+      <h2 class="intertitle-name">Rafael<br>Ramírez</h2>
+      <p class="intertitle-cct">CCT 15DPR0852X</p>
+      <div class="intertitle-rule" aria-hidden="true"><span></span>✦<span></span></div>
+      <p class="intertitle-legend">Nuestra historia vive aquí</p>
+      <button class="intertitle-continue" id="continuar-invitacion" type="button">Ver mi invitación <span aria-hidden="true">↗</span></button>
+    </div>
+  </div>
+
+  <main id="contenido" hidden>
+    <header class="site-header">
+      <a class="wordmark" href="#inicio" aria-label="Rafael Ramírez, inicio"><img src="assets/emblema.svg" alt="" width="37" height="37"><span>Rafael Ramírez<small>Escuela Primaria</small></span></a>
+      <nav aria-label="Secciones de la invitación"><a href="#celebracion">La celebración</a><a href="#programa">Programa</a><a class="nav-date" href="#fecha">20 NOV <span>2026</span></a></nav>
+    </header>
+
+    <section class="hero" id="inicio" aria-labelledby="titulo">
+      <div class="hero-art" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="overline"><span class="little-star" aria-hidden="true">✦</span> Escuela Primaria · CCT 15DPR0852X</p>
+        <h1 id="titulo" tabindex="-1">Rafael<br><em>Ramírez</em></h1>
+        <p class="hero-motto">Nuestra historia vive aquí.</p>
+        <p class="hero-description">Te invitamos a conmemorar la <strong>Revolución Mexicana</strong> con el talento, la alegría y las tradiciones de nuestra comunidad escolar.</p>
+        <a class="button button-green" href="#fecha">Descubre la invitación <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-art-frame" aria-hidden="true"><div class="hero-art-image"></div><span class="art-frame-label">MÉXICO · HISTORIA VIVA</span></div>
+      <div class="date-stamp" aria-label="20 de noviembre de 2026"><span>Nos vemos el</span><strong>20</strong><b>NOVIEMBRE</b><span>2026</span></div>
+      <span class="hero-caption">Un encuentro con nuestras raíces.</span>
+    </section>
+
+    <div class="celebration-ribbon" aria-hidden="true"><span>HISTORIA</span><i>✦</i><span>MÚSICA</span><i>✦</i><span>TRADICIÓN</span><i>✦</i><span>COMUNIDAD</span><i>✦</i><span>MÉXICO</span></div>
+
+    <section class="welcome section-wrap" id="celebracion" aria-labelledby="bienvenida">
+      <div class="section-mark" aria-hidden="true">01 <span>✦</span></div>
+      <div class="welcome-title"><p class="overline">Celebrar también es recordar</p><h2 id="bienvenida">Nuestras raíces.<br><em>Nuestra historia.</em></h2></div>
+      <div class="welcome-copy"><p>El <strong>20 de noviembre</strong> nos reúne para conmemorar la Revolución Mexicana y compartir el talento de nuestra comunidad.</p><p>Vive con nosotros una celebración de nuestras raíces, con la alegría que hace especial a nuestra escuela.</p><span class="handwritten">¡Tú también eres parte de esta historia!</span></div>
+    </section>
+
+    <section class="boarding-section section-wrap" id="fecha" aria-labelledby="datos">
+      <div class="boarding-heading"><p class="overline">Un viaje hacia nuestras raíces</p><h2 id="datos">Tu boleto<br><em>a nuestra historia.</em></h2><p>El destino es compartir lo que somos.<br>La mejor compañía: nuestra comunidad.</p></div>
+      <article class="train-ticket" aria-label="Boleto de invitación para el 20 de noviembre de 2026">
+        <div class="ticket-main">
+          <div class="ticket-brand"><svg viewBox="0 0 70 46" aria-hidden="true"><path d="M8 36h53l-4 6H4m5-8V18h16V7h7v17h9v-7h12v17M12 18v-9h10v9M29 7V3h9v4M41 24h18l5 12H41"/><circle cx="16" cy="35" r="7"/><circle cx="35" cy="35" r="7"/><circle cx="53" cy="35" r="5"/><path d="M28 2c-8-4-13 2-18-1"/></svg><div><span>Ferrocarril de nuestra historia</span><strong>Pase de abordar</strong></div><span class="ticket-edition">NOV<br>2026</span></div>
+          <div class="ticket-route"><div><span>Origen</span><strong>Rafael Ramírez</strong></div><div class="ticket-track" aria-hidden="true"><i></i>✦<b>→</b></div><div><span>Destino</span><strong>Revolución Mexicana</strong></div></div>
+          <dl class="ticket-fields"><div><dt>Fecha de viaje</dt><dd>20 de noviembre<small>Viernes · 2026</small></dd></div><div><dt>Hora de salida</dt><dd>Por confirmar<small>La anunciaremos aquí.</small></dd></div><div><dt>Pasajeros</dt><dd>Comunidad escolar<small>Nos reúne la tradición.</small></dd></div></dl>
+          <div class="ticket-host"><span>Te invita</span><strong>Escuela Primaria Rafael Ramírez</strong><small>CCT 15DPR0852X · Turno matutino</small></div>
+          <div class="ticket-fineprint"><span>INVITACIÓN ESCOLAR</span><span>No. 20 · NOV · 2026</span></div>
+        </div>
+        <div class="ticket-stub" aria-label="Talón del boleto"><span class="stub-label">Tu boleto</span><span class="stub-star" aria-hidden="true">✦</span><strong>20</strong><b>NOVIEMBRE</b><span class="stub-year">2026</span><span class="stub-rule"></span><p>Un viaje<br>a nuestras raíces.</p><div class="ticket-bars" aria-hidden="true"></div><span class="stub-number">RR · 201126</span></div>
+      </article>
+      <div class="boarding-actions"><button class="button button-green" id="guardar-fecha" type="button">Guardar la fecha de mi viaje <span aria-hidden="true">↗</span></button><p>Reserva el día en tu calendario.<br>La hora está por confirmar.</p></div>
+    </section>
+
+    <section class="program-section" id="programa" aria-labelledby="titulo-programa">
+      <div class="program-inner section-wrap">
+        <p class="overline"><span aria-hidden="true">✦</span> El escenario de nuestra escuela</p>
+        <h2 id="titulo-programa">El talento se prepara.<br><em>La emoción ya está aquí.</em></h2>
+        <div class="program-announcement"><span class="announcement-icon" aria-hidden="true">✺</span><div><span class="status-pill">Próximamente</span><h3>Programa de participaciones</h3><p>Las participaciones definitivas se publicarán aquí. Estamos preparando cada detalle para compartir una celebración especial.</p></div><span class="program-flower" aria-hidden="true">✦</span></div>
+        <p class="program-bottom">Historia que recordamos. Tradiciones que compartimos.</p>
+      </div>
+    </section>
+
+    <section class="countdown-section section-wrap" aria-labelledby="cuenta-titulo">
+      <div class="countdown-copy"><p class="overline">El encuentro se acerca</p><h2 id="cuenta-titulo">Ya se siente<br><em>la emoción.</em></h2><p id="cuenta-nota">Contamos los días para el 20 de noviembre.</p></div>
+      <div class="countdown-display" id="cuenta-regresiva" aria-live="polite"><span id="dias-etiqueta">Faltan</span><strong id="dias">15</strong><span id="dias-unidad">días para celebrar</span><div class="countdown-date">20 <span>✦</span> NOV <span>✦</span> 2026</div></div>
+    </section>
+
+    <section class="school-section" id="escuela" aria-labelledby="nuestra-escuela">
+      <div class="school-inner section-wrap"><div><p class="overline">Nuestra comunidad, nuestro lugar</p><h2 id="nuestra-escuela">Aquí se escriben<br><em>grandes historias.</em></h2></div><div class="school-address"><strong>Escuela Primaria Rafael Ramírez</strong><p>Calle 6 y Calle Chalco, colonia El Barco.<br>Nezahualcóyotl, Estado de México.</p><a class="text-link" href="https://maps.app.goo.gl/bwV22ketmumNK5HaA" target="_blank" rel="noopener noreferrer">Ver ubicación de la escuela <span aria-hidden="true">↗</span></a></div></div>
+    </section>
+
+    <footer class="site-footer section-wrap"><div><span class="footer-star" aria-hidden="true">✦</span><p><strong>¡Te esperamos!</strong><span>La historia nos reúne. Nuestra comunidad la hace vivir.</span></p></div><div class="footer-meta"><span>CCT 15DPR0852X · Turno matutino</span><span>Ciclo escolar 2026–2027</span><button class="reopen-button" id="volver-abrir" type="button">Volver a vivir el viaje ↗</button></div></footer>
+  </main>
+
+  <div class="confetti" id="confeti" aria-hidden="true"></div>
+  <div class="toast" id="aviso" role="status"></div>
+  <noscript><style>.cover{display:none!important}main[hidden]{display:block!important}body{overflow:auto!important}.welcome,.boarding-section,.program-inner,.countdown-section,.school-inner{opacity:1!important;transform:none!important}</style></noscript>
+</body>
+</html>
