@@ -8,10 +8,12 @@
   <title>20 de noviembre · Invitación Rafael Ramírez</title>
   <link rel="icon" href="assets/emblema.svg" type="image/svg+xml">
   <link rel="preload" href="assets/paisaje-cine.jpg" as="image">
+  <link rel="preload" href="assets/boleto-fotografico-0830.png" as="image" media="(min-width: 761px)">
+  <link rel="preload" href="assets/boleto-fotografico-movil-0830.png" as="image" media="(max-width: 760px)">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="cinema.css">
-  <link rel="stylesheet" href="boarding.css?v=5">
-  <script src="app.js?v=5" defer></script>
+  <link rel="stylesheet" href="boarding.css?v=6-1">
+  <script src="app.js?v=6-1" defer></script>
 </head>
 <body class="cover-visible cinematic">
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -41,7 +43,21 @@
       <p class="intertitle-cct">CCT 15DPR0852X</p>
       <div class="intertitle-rule" aria-hidden="true"><span></span>✦<span></span></div>
       <p class="intertitle-legend">Nuestra historia vive aquí</p>
-      <button class="intertitle-continue" id="continuar-invitacion" type="button">Ver mi invitación <span aria-hidden="true">↗</span></button>
+      <button class="intertitle-continue" id="continuar-invitacion" type="button">Recibir mi boleto <span aria-hidden="true">↗</span></button>
+    </div>
+    <div class="boarding-welcome-stage" id="bienvenida-viaje" hidden aria-labelledby="bienvenida-titulo">
+      <div class="boarding-welcome-heading">
+        <p>Tu pase de abordar</p>
+        <h2 id="bienvenida-titulo" tabindex="-1">¡Bienvenido al viaje!</h2>
+        <time datetime="2026-11-20T08:30:00-06:00">20 de noviembre de 2026 <span aria-hidden="true">✦</span> 8:30 a. m.</time>
+      </div>
+      <div class="boarding-welcome-picture">
+        <picture>
+          <source media="(max-width: 760px)" srcset="assets/boleto-fotografico-movil-0830.png" width="1024" height="1536">
+          <img src="assets/boleto-fotografico-0830.png" alt="Tu boleto de tren. Escuela Primaria Rafael Ramírez, CCT 15DPR0852X. Revolución Mexicana. 20 de noviembre de 2026, 8:30 a. m." width="1536" height="1024" decoding="async">
+        </picture>
+      </div>
+      <button class="boarding-welcome-button" id="abordar-viaje" type="button">Continuar el viaje <span aria-hidden="true">↗</span></button>
     </div>
   </div>
 

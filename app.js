@@ -13,6 +13,7 @@ let fallbackTimer;
 let intertitleTimer;
 let intertitleReadyTimer;
 let intertitleShown = false;
+let boardingShown = false;
 let fallbackAudio;
 let fallbackBuffer;
 const trainVideo = $('#tren-video');
@@ -99,8 +100,26 @@ function revealSchool() {
   }, reduceMotion.matches ? 0 : 1300);
 }
 
+function showBoardingPass() {
+  if (schoolRevealed || boardingShown) return;
+  boardingShown = true;
+  filmPlaying = false;
+  window.clearTimeout(filmWatchdog);
+  window.clearTimeout(fallbackTimer);
+  window.clearTimeout(intertitleTimer);
+  window.clearTimeout(intertitleReadyTimer);
+  trainVideo.pause();
+  fallbackAudio?.stop(); fallbackAudio = null;
+  $('#omitir').hidden = true;
+  $('#escuela-intertitulo').hidden = true;
+  $('#bienvenida-viaje').hidden = false;
+  $('#portada').classList.add('is-boarding');
+  $('#portada').scrollTop = 0;
+  $('#bienvenida-titulo').focus({ preventScroll: true });
+}
+
 function showIntertitle() {
-  if (schoolRevealed || intertitleShown) return;
+  if (schoolRevealed || intertitleShown || boardingShown) return;
   intertitleShown = true;
   $('#escuela-intertitulo').hidden = false;
   $('#escuela-intertitulo').dataset.ready = 'false';
@@ -111,7 +130,7 @@ function showIntertitle() {
     $('#escuela-intertitulo').dataset.ready = 'true';
     $('#continuar-invitacion').disabled = false;
   }, reduceMotion.matches ? 0 : 2200);
-  intertitleTimer = window.setTimeout(revealSchool, 5600);
+  intertitleTimer = window.setTimeout(showBoardingPass, 5600);
 }
 
 function startFallback() {
@@ -149,12 +168,15 @@ function reopenInvitation() {
   filmPlaying = false;
   schoolRevealed = false;
   intertitleShown = false;
+  boardingShown = false;
+  $('#bienvenida-viaje').hidden = true;
   $('#escuela-intertitulo').hidden = true;
   $('#escuela-intertitulo').dataset.ready = 'false';
   $('#continuar-invitacion').disabled = true;
   $('#portada').hidden = false;
-  $('#portada').classList.remove('opening', 'is-playing', 'film-fallback', 'is-titling');
+  $('#portada').classList.remove('opening', 'is-playing', 'film-fallback', 'is-titling', 'is-boarding');
   $('#portada').style.setProperty('--progress', '0%');
+  $('#portada').scrollTop = 0;
   document.body.classList.add('cover-visible');
   document.body.classList.remove('school-revealed');
   $('#contenido').hidden = true;
@@ -223,8 +245,9 @@ $('#abrir').addEventListener('click', openInvitation);
 $('.skip-link').addEventListener('click', (event) => {
   if ($('#contenido').hidden) { event.preventDefault(); revealSchool(); }
 });
-$('#omitir').addEventListener('click', revealSchool);
-$('#continuar-invitacion').addEventListener('click', revealSchool);
+$('#omitir').addEventListener('click', showBoardingPass);
+$('#continuar-invitacion').addEventListener('click', showBoardingPass);
+$('#abordar-viaje').addEventListener('click', revealSchool);
 trainVideo.addEventListener('ended', showIntertitle);
 trainVideo.addEventListener('error', startFallback);
 trainVideo.addEventListener('timeupdate', () => {
