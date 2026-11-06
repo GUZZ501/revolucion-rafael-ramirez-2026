@@ -1,6 +1,6 @@
 'use strict';
 
-const EVENT = Object.freeze({ date: '2026-11-20', year: 2026, time: '08:30', startUtc: '20261120T143000Z', program: null });
+const EVENT = Object.freeze({ date: '2026-11-20', year: 2026, time: '08:30', startsAt: '2026-11-20T08:30:00-06:00', startUtc: '20261120T143000Z', program: null });
 const $ = (selector) => document.querySelector(selector);
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const soundEnabled = true;
@@ -186,29 +186,42 @@ function reopenInvitation() {
   $('#abrir').focus({ preventScroll: true });
 }
 
+function countdownParts(targetMs, nowMs) {
+  const totalSeconds = Math.max(0, Math.ceil((targetMs - nowMs) / 1000));
+  return {
+    totalSeconds,
+    days: Math.floor(totalSeconds / 86400),
+    hours: Math.floor((totalSeconds % 86400) / 3600),
+    minutes: Math.floor((totalSeconds % 3600) / 60),
+    seconds: totalSeconds % 60
+  };
+}
+
+const eventStartMs = Date.parse(EVENT.startsAt);
+const mexicoDateFormatter = new Intl.DateTimeFormat('en-CA', {
+  timeZone: 'America/Mexico_City', year: 'numeric', month: '2-digit', day: '2-digit'
+});
+
 function updateCountdown() {
-  const localDate = new Intl.DateTimeFormat('en-CA', {
-    timeZone: 'America/Mexico_City', year: 'numeric', month: '2-digit', day: '2-digit'
-  }).format(new Date());
-  const today = Date.parse(`${localDate}T00:00:00Z`);
-  const target = Date.parse(`${EVENT.date}T00:00:00Z`);
-  const days = Math.round((target - today) / 86400000);
-  if (days > 0) {
-    $('#dias-etiqueta').textContent = days === 1 ? 'Falta' : 'Faltan';
-    $('#dias').textContent = days;
-    $('#dias-unidad').textContent = days === 1 ? 'día para celebrar' : 'días para celebrar';
-  } else if (days === 0) {
-    $('#dias-etiqueta').textContent = 'El gran día';
-    $('#dias').textContent = '¡Hoy!';
-    $('#dias-unidad').textContent = 'nuestra historia nos reúne';
-    $('#cuenta-nota').textContent = 'Hoy es 20 de noviembre. Consulta los datos de la celebración.';
-    $('#cuenta-regresiva').classList.add('countdown-message');
-  } else {
-    $('#dias-etiqueta').textContent = 'Nuestra historia';
-    $('#dias').textContent = 'nos une';
-    $('#dias-unidad').textContent = 'sigamos compartiendo nuestras tradiciones';
-    $('#cuenta-nota').textContent = '20 de noviembre de 2026 · Revolución Mexicana';
-    $('#cuenta-regresiva').classList.add('countdown-message');
+  const now = Date.now();
+  const left = countdownParts(eventStartMs, now);
+  const pad = (value) => String(value).padStart(2, '0');
+  for (const [id, value] of [['#reloj-dias', left.days], ['#reloj-horas', left.hours], ['#reloj-minutos', left.minutes], ['#reloj-segundos', left.seconds]]) {
+    const text = pad(value);
+    if ($(id).textContent !== text) $(id).textContent = text;
+  }
+  // The three hands show the time remaining, turning back as the event approaches.
+  $('#reloj-aguja-hora').setAttribute('transform', `rotate(${(left.hours % 12) * 30 + left.minutes / 2 + left.seconds / 120} 160 160)`);
+  $('#reloj-aguja-minuto').setAttribute('transform', `rotate(${left.minutes * 6 + left.seconds / 10} 160 160)`);
+  $('#reloj-aguja-segundo').setAttribute('transform', `rotate(${left.seconds * 6} 160 160)`);
+  $('#cuenta-regresiva').setAttribute('aria-label', `Faltan ${left.days} días, ${left.hours} horas, ${left.minutes} minutos y ${left.seconds} segundos para el 20 de noviembre de 2026 a las 8:30 a. m., hora de la Ciudad de México.`);
+  if (now >= eventStartMs) {
+    const isEventDay = mexicoDateFormatter.format(new Date(now)) === EVENT.date;
+    const status = isEventDay ? '¡El viaje ha comenzado!' : 'Nuestra historia nos une';
+    const note = isEventDay ? '¡Llegó el día! La celebración comienza a las 8:30 a. m.' : 'Compartimos la historia del 20 de noviembre de 2026.';
+    if ($('#reloj-estado').textContent !== status) $('#reloj-estado').textContent = status;
+    if ($('#cuenta-nota').textContent !== note) $('#cuenta-nota').textContent = note;
+    $('#cuenta-regresiva').setAttribute('aria-label', status);
   }
 }
 
@@ -257,7 +270,8 @@ trainVideo.addEventListener('timeupdate', () => {
 $('#volver-abrir').addEventListener('click', reopenInvitation);
 $('#guardar-fecha').addEventListener('click', downloadCalendar);
 updateCountdown();
-window.setInterval(updateCountdown, 60000);
+window.setInterval(updateCountdown, 1000);
+document.addEventListener('visibilitychange', () => { if (!document.hidden) updateCountdown(); });
 
 const sectionObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('in-view'); sectionObserver.unobserve(entry.target); } });
