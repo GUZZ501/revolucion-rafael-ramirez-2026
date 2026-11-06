@@ -1,6 +1,6 @@
 'use strict';
 
-const EVENT = Object.freeze({ date: '2026-11-20', year: 2026, time: '08:30', startsAt: '2026-11-20T08:30:00-06:00', startUtc: '20261120T143000Z', program: null });
+const EVENT = Object.freeze({ date: '2026-11-20', year: 2026, time: '08:30', startsAt: '2026-11-20T08:30:00-06:00', startUtc: '20261120T143000Z', program: true });
 const $ = (selector) => document.querySelector(selector);
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const soundEnabled = true;
