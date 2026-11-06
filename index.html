@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#173c32">
-  <meta name="description" content="Nuestra historia nos reúne. La Escuela Primaria Rafael Ramírez te invita a conmemorar la Revolución Mexicana el 20 de noviembre de 2026. Hora y programa por confirmar.">
+  <meta name="description" content="Nuestra historia nos reúne. La Escuela Primaria Rafael Ramírez te invita a conmemorar la Revolución Mexicana el 20 de noviembre de 2026. A las 8:30 a. m. Programa por confirmar.">
   <title>20 de noviembre · Invitación Rafael Ramírez</title>
   <link rel="icon" href="assets/emblema.svg" type="image/svg+xml">
   <link rel="preload" href="assets/paisaje-cine.jpg" as="image">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="cinema.css">
-  <link rel="stylesheet" href="boarding.css">
-  <script src="app.js" defer></script>
+  <link rel="stylesheet" href="boarding.css?v=5">
+  <script src="app.js?v=5" defer></script>
 </head>
 <body class="cover-visible cinematic">
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -24,7 +24,7 @@
     <div class="cinema-topline"><span>Escuela Primaria <b>Rafael Ramírez</b></span><span>Una historia que nos une</span></div>
     <button id="omitir" class="skip-film" type="button" hidden>Omitir entrada <span aria-hidden="true">↗</span></button>
     <div class="cinema-cover-copy">
-      <span class="cinema-eyebrow"><i></i> 20 de noviembre de 2026 <i></i></span>
+      <span class="cinema-eyebrow"><i></i> 20 de noviembre · 8:30 a. m. <i></i></span>
       <div class="cinema-ornament" aria-hidden="true">✦</div>
       <h1>Hay historias<br>que nunca dejan<br><em>de avanzar.</em></h1>
       <p>Un viaje hacia nuestras raíces.<br>Una celebración que nos reúne.</p>
@@ -56,7 +56,7 @@
       <div class="hero-content">
         <p class="overline"><span class="little-star" aria-hidden="true">✦</span> Escuela Primaria · CCT 15DPR0852X</p>
         <h1 id="titulo" tabindex="-1">Rafael<br><em>Ramírez</em></h1>
-        <p class="hero-motto">Nuestra historia vive aquí.</p>
+        <p class="hero-motto">Nuestra historia vive aquí.</p><p class="hero-event-time">20 de noviembre · 8:30 a. m.</p>
         <p class="hero-description">Te invitamos a conmemorar la <strong>Revolución Mexicana</strong> con el talento, la alegría y las tradiciones de nuestra comunidad escolar.</p>
         <a class="button button-green" href="#fecha">Descubre la invitación <span aria-hidden="true">↓</span></a>
       </div>
@@ -74,16 +74,16 @@
     </section>
 
     <section class="boarding-section section-wrap" id="fecha" aria-labelledby="datos">
-      <div class="boarding-heading"><p class="overline">Un viaje hacia nuestras raíces</p><h2 id="datos">Tu boleto<br><em>a nuestra historia.</em></h2><p>El destino es compartir lo que somos.<br>La mejor compañía: nuestra comunidad.</p></div>
+      <div class="boarding-heading"><p class="overline">Un viaje hacia nuestras raíces</p><h2 id="datos">Tu boleto<br><em>a nuestra historia.</em></h2><p class="boarding-schedule"><time datetime="2026-11-20T08:30:00-06:00">20 de noviembre de 2026 · <strong>8:30 a. m.</strong></time></p><p>El destino es compartir lo que somos.<br>La mejor compañía: nuestra comunidad.</p></div>
       <figure class="ticket-photograph">
         <picture>
-          <source media="(max-width: 760px)" srcset="assets/boleto-fotografico-movil.png" width="1024" height="1536">
-          <img src="assets/boleto-fotografico.png" alt="Pase de abordar de tren antiguo sobre una mesa verde, con papel marfil, grabado de una locomotora y sellos color vino. Escuela Primaria Rafael Ramírez, CCT 15DPR0852X. Revolución Mexicana, 20 de noviembre de 2026. Hora por confirmar." width="1536" height="1024" loading="lazy" decoding="async">
+          <source media="(max-width: 760px)" srcset="assets/boleto-fotografico-movil-0830.png" width="1024" height="1536">
+          <img src="assets/boleto-fotografico-0830.png" alt="Pase de abordar de tren antiguo sobre una mesa verde, con papel marfil, grabado de una locomotora y sellos color vino. Escuela Primaria Rafael Ramírez, CCT 15DPR0852X. Revolución Mexicana, 20 de noviembre de 2026. Hora: 8:30 a. m." width="1536" height="1024" loading="lazy" decoding="async">
         </picture>
-        <figcaption class="ticket-accessible">Tu boleto a nuestra historia. Pase de abordar de la Escuela Primaria Rafael Ramírez, CCT 15DPR0852X. Destino: Revolución Mexicana. Fecha: viernes 20 de noviembre de 2026. Hora por confirmar. Invitación para la comunidad escolar.</figcaption>
+        <figcaption class="ticket-accessible">Tu boleto a nuestra historia. Pase de abordar de la Escuela Primaria Rafael Ramírez, CCT 15DPR0852X. Destino: Revolución Mexicana. Fecha: viernes 20 de noviembre de 2026. Hora: 8:30 a. m. Invitación para la comunidad escolar.</figcaption>
       </figure>
-      <div class="ticket-download-row"><a href="assets/boleto-fotografico-movil.png" download="Mi-boleto-Rafael-Ramirez-20-noviembre.png">Guardar mi boleto <span aria-hidden="true">↓</span></a></div>
-      <div class="boarding-actions"><button class="button button-green" id="guardar-fecha" type="button">Guardar la fecha de mi viaje <span aria-hidden="true">↗</span></button><p>Reserva el día en tu calendario.<br>La hora está por confirmar.</p></div>
+      <div class="ticket-download-row"><a href="assets/boleto-fotografico-movil-0830.png" download="Mi-boleto-Rafael-Ramirez-20-noviembre-0830.png">Guardar mi boleto <span aria-hidden="true">↓</span></a></div>
+      <div class="boarding-actions"><button class="button button-green" id="guardar-fecha" type="button">Guardar la fecha de mi viaje <span aria-hidden="true">↗</span></button><p>Reserva el día en tu calendario.<br>Inicio: 8:30 a. m.</p></div>
     </section>
 
     <section class="program-section" id="programa" aria-labelledby="titulo-programa">

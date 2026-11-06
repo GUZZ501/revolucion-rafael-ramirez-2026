@@ -1,6 +1,6 @@
 'use strict';
 
-const EVENT = Object.freeze({ date: '2026-11-20', year: 2026, time: null, program: null });
+const EVENT = Object.freeze({ date: '2026-11-20', year: 2026, time: '08:30', startUtc: '20261120T143000Z', program: null });
 const $ = (selector) => document.querySelector(selector);
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const soundEnabled = true;
@@ -203,10 +203,10 @@ function downloadCalendar() {
     'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Rafael Ramirez//Invitacion escolar//ES',
     'CALSCALE:GREGORIAN', 'METHOD:PUBLISH', 'BEGIN:VEVENT',
     'UID:revolucion-20261120-rafael-ramirez@invitacion.local', `DTSTAMP:${now}`,
-    'DTSTART;VALUE=DATE:20261120', 'DTEND;VALUE=DATE:20261121',
+    `DTSTART:${EVENT.startUtc}`, 'SEQUENCE:1',
     'SUMMARY:Revolución Mexicana - Escuela Primaria Rafael Ramírez',
-    'DESCRIPTION:Reserva el día 20 de noviembre de 2026. Hora por confirmar. Consulta la invitación para conocer las actualizaciones.',
-    'STATUS:TENTATIVE', 'TRANSP:TRANSPARENT', 'END:VEVENT', 'END:VCALENDAR', ''
+    'DESCRIPTION:20 de noviembre de 2026 a las 8:30 a. m. (hora de la Ciudad de México). Consulta la invitación para conocer el programa de participaciones.',
+    'STATUS:CONFIRMED', 'TRANSP:OPAQUE', 'END:VEVENT', 'END:VCALENDAR', ''
   ].join('\r\n');
   const url = URL.createObjectURL(new Blob([contents], { type: 'text/calendar;charset=utf-8' }));
   const link = document.createElement('a');
@@ -216,7 +216,7 @@ function downloadCalendar() {
   link.click();
   link.remove();
   window.setTimeout(() => URL.revokeObjectURL(url), 2000);
-  showToast('Se guardó el recordatorio del día. La hora aún está por confirmar.');
+  showToast('Se descargó el recordatorio: 20 de noviembre, 8:30 a. m.');
 }
 
 $('#abrir').addEventListener('click', openInvitation);

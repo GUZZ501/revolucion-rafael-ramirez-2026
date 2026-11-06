@@ -18,3 +18,6 @@
 .ticket-download-row{text-align:center;margin-top:20px}.ticket-download-row a{display:inline-flex;align-items:center;gap:18px;padding:8px 0;text-decoration:none;border-bottom:1px solid #a9875080;color:#754129;font:500 11px var(--sans);letter-spacing:.02em}.ticket-download-row a:hover{color:var(--green);border-color:var(--green)}.ticket-download-row a span{font-size:16px}
 @media(max-width:760px){.ticket-photograph{border-radius:4px;box-shadow:0 14px 30px #23382a1c}.ticket-photograph img{aspect-ratio:2/3}.ticket-download-row{margin-top:15px}.ticket-download-row a{font-size:11px}.boarding-heading{margin-bottom:25px}}
 @media print{.ticket-photograph{break-inside:avoid;box-shadow:none;max-width:600px;margin-inline:auto}.ticket-download-row{display:none}}
+
+.boarding-schedule{margin-top:19px;color:var(--red);font:500 12px/1.7 var(--sans)}.boarding-schedule strong{font-weight:600;font-size:15px}.hero-event-time{font:600 12px/1.5 var(--sans);letter-spacing:.05em;color:#ead6a5;margin:0 0 20px}
+@media(max-width:760px){.boarding-schedule{font-size:11px}.boarding-schedule strong{font-size:14px}.hero-event-time{font-size:10px;margin-bottom:15px}}
