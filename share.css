@@ -1,0 +1,13 @@
+.share-invitation{padding-top:24px;margin-top:25px;border-top:3px double #aa8452;text-align:center;color:#745331}
+.share-invitation h3{font:400 31px/1.15 var(--antique-script);color:#813b2b;margin-bottom:8px}
+.share-invitation>p{font:400 11px/1.7 Georgia,serif;color:#82613c;margin-bottom:16px}
+.share-invitation-actions{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px}
+.share-invitation-actions a,.share-invitation-actions button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 17px;border:1px solid #ac8754;background:#f5e6c6;color:#70452c;text-decoration:none;font:600 12px/1.5 Georgia,serif;border-radius:2px;cursor:pointer}
+.share-invitation-actions .share-whatsapp{background:#234c3b;border:3px double #bca478;color:#fff1ce}
+.share-invitation-actions .share-whatsapp:hover{background:#315f49}
+.share-invitation-actions button:hover{background:#fdf0d5}
+.share-invitation-actions svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.share-cover-download{display:inline-block;margin-top:15px;padding:5px 0;border-bottom:1px solid #a98658;color:#7f5533;font:400 11px/1.5 Georgia,serif;text-decoration:none}
+#mensaje-compartir{display:block;width:100%;max-width:590px;min-height:165px;margin:17px auto 0;padding:14px;border:1px solid #ac8754;background:#fff5de;color:#61442e;font:400 13px/1.7 Georgia,serif;resize:vertical}
+@media(max-width:760px){.share-invitation{padding-top:20px;margin-top:22px}.share-invitation h3{font-size:30px}.share-invitation>p{font-size:11px;max-width:245px;margin:0 auto 15px}.share-invitation-actions{flex-direction:column;gap:10px}.share-invitation-actions>a,.share-invitation-actions>button{width:100%;font-size:12px;min-height:49px}.share-cover-download{font-size:11px}}
+@media print{.share-invitation{display:none!important}}

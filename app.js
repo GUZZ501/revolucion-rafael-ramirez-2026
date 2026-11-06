@@ -337,6 +337,20 @@ function downloadCalendar() {
   showToast('Se descargó el recordatorio: 20 de noviembre, 8:30 a. m.');
 }
 
+async function copyInvitation() {
+  const message = $('#mensaje-compartir');
+  try {
+    await navigator.clipboard.writeText(message.value);
+    showToast('Mensaje copiado. Pégalo en WhatsApp.');
+  } catch {
+    message.hidden = false;
+    message.focus();
+    message.select();
+    showToast('Selecciona y copia el mensaje para compartirlo.');
+  }
+}
+
+$('#copiar-invitacion').addEventListener('click', copyInvitation);
 $('#abrir').addEventListener('click', openInvitation);
 $('.skip-link').addEventListener('click', (event) => {
   if ($('#contenido').hidden) { event.preventDefault(); revealSchool(); }

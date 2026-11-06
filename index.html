@@ -5,6 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#173c32">
   <meta name="description" content="Nuestra historia nos reúne. La Escuela Primaria Rafael Ramírez te invita a conmemorar la Revolución Mexicana el 20 de noviembre de 2026. A las 8:30 a. m. Programa por confirmar.">
+  <link rel="canonical" href="https://guzz501.github.io/revolucion-rafael-ramirez-2026/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:site_name" content="Escuela Primaria Rafael Ramírez">
+  <meta property="og:title" content="Tu boleto a nuestra historia · Rafael Ramírez">
+  <meta property="og:description" content="Te esperamos el 20 de noviembre de 2026 a las 8:30 a. m. Abre tu invitación a la celebración de la Revolución Mexicana.">
+  <meta property="og:url" content="https://guzz501.github.io/revolucion-rafael-ramirez-2026/?v=11">
+  <meta property="og:image" content="https://guzz501.github.io/revolucion-rafael-ramirez-2026/assets/portada-whatsapp-v11.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="600">
+  <meta property="og:image:alt" content="Boleto de tren antiguo de la Escuela Primaria Rafael Ramírez. Revolución Mexicana, 20 de noviembre de 2026 a las 8:30 a. m.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tu boleto a nuestra historia · Rafael Ramírez">
+  <meta name="twitter:description" content="20 de noviembre de 2026 · 8:30 a. m. Escuela Primaria Rafael Ramírez.">
+  <meta name="twitter:image" content="https://guzz501.github.io/revolucion-rafael-ramirez-2026/assets/portada-whatsapp-v11.jpg">
   <title>20 de noviembre · Invitación Rafael Ramírez</title>
   <link rel="icon" href="assets/emblema.svg" type="image/svg+xml">
   <link rel="preload" href="assets/paisaje-cine.jpg" as="image">
@@ -16,7 +32,8 @@
   <link rel="stylesheet" href="period.css?v=9">
   <link rel="stylesheet" href="editorial.css?v=9-1">
   <link rel="stylesheet" href="handwriting.css?v=10-1">
-  <script src="app.js?v=10-2" defer></script>
+  <link rel="stylesheet" href="share.css?v=11">
+  <script src="app.js?v=11" defer></script>
 </head>
 <body class="cover-visible cinematic">
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -118,6 +135,25 @@
       </figure>
       <div class="ticket-download-row"><a href="assets/boleto-fotografico-movil-0830.png" download="Mi-boleto-Rafael-Ramirez-20-noviembre-0830.png">Guardar mi boleto <span aria-hidden="true">↓</span></a></div>
       <div class="boarding-actions"><button class="button button-green" id="guardar-fecha" type="button">Guardar la fecha en mi calendario <span aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M7 2v6m10-6v6M3 11h18m-13 5h3m2 0h3"/></svg></span></button><p>Reserva el día en tu calendario.<br>Inicio: 8:30 a. m.</p></div>
+
+      <div class="share-invitation" id="compartir" role="group" aria-labelledby="compartir-titulo">
+        <h3 id="compartir-titulo">Comparte este viaje</h3>
+        <p>Invita a más familias a ser parte de nuestra historia.</p>
+        <div class="share-invitation-actions">
+          <a class="share-whatsapp" href="https://wa.me/?text=%F0%9F%9A%82%20%2A%C2%A1Tu%20boleto%20a%20nuestra%20historia%21%2A%0A%0ALa%20Escuela%20Primaria%20%2ARafael%20Ram%C3%ADrez%2A%20te%20invita%20a%20conmemorar%20la%20Revoluci%C3%B3n%20Mexicana.%0A%0A%F0%9F%93%85%2020%20de%20noviembre%20de%202026%0A%F0%9F%95%A3%208%3A30%20a.%20m.%0A%0AAbre%20tu%20invitaci%C3%B3n%20y%20comienza%20el%20viaje%3A%0Ahttps%3A%2F%2Fguzz501.github.io%2Frevolucion-rafael-ramirez-2026%2F%3Fv%3D11" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.8a8.5 8.5 0 0 1-12.7 7.4L3 20.5l1.3-4.7a8.5 8.5 0 1 1 16.2-4Z"/><path d="M8.2 7.5c-.9.4-1.1 1.6-.4 3 1 2.1 2.8 4 5.1 5 .9.4 2.2.3 2.8-.5l.5-1.1-2.3-1.1-.8.9c-1.4-.6-2.4-1.6-3-2.9l.8-.8-1-2.5Z"/></svg>Compartir por WhatsApp</a>
+          <button id="copiar-invitacion" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="1"/><path d="M15 8V3H3v13h5"/></svg>Copiar mensaje</button>
+        </div>
+        <a class="share-cover-download" href="assets/portada-whatsapp-v11.jpg" download="Invitacion-Rafael-Ramirez-20-noviembre.jpg">Guardar portada para compartir ↓</a>
+        <textarea id="mensaje-compartir" aria-label="Mensaje de invitación para copiar" readonly hidden>🚂 *¡Tu boleto a nuestra historia!*
+
+La Escuela Primaria *Rafael Ramírez* te invita a conmemorar la Revolución Mexicana.
+
+📅 20 de noviembre de 2026
+🕣 8:30 a. m.
+
+Abre tu invitación y comienza el viaje:
+https://guzz501.github.io/revolucion-rafael-ramirez-2026/?v=11</textarea>
+      </div>
     </section>
 
     <section class="program-section editorial-program" id="programa" aria-labelledby="titulo-programa">
