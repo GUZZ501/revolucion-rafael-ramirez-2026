@@ -1,0 +1,22 @@
+/* The full shaped line stays intact so its cursive letters remain connected. */
+.school-intertitle .handwriting-panel{position:relative;display:flex;flex-direction:column;align-items:center;width:100%;max-width:850px;isolation:isolate}
+.school-intertitle .handwriting-line{display:block;width:max-content;max-width:100%;margin-inline:auto;white-space:nowrap;animation:none!important}
+.school-intertitle .handwriting-line.is-writing{text-shadow:0 0 16px #e3c58b38}
+.school-intertitle .intertitle-school,.school-intertitle .intertitle-name,.school-intertitle .intertitle-cct{animation:none!important}
+.school-intertitle .intertitle-name{padding:0 12px;margin-bottom:29px}
+.school-intertitle .intertitle-cct{margin-top:0}
+.school-intertitle .intertitle-rule,.school-intertitle .intertitle-legend,.school-intertitle .intertitle-continue{animation:none!important;opacity:0;transition:opacity .7s}
+.school-intertitle[data-ready="true"] .intertitle-rule,.school-intertitle[data-ready="true"] .intertitle-legend,.school-intertitle[data-ready="true"] .intertitle-continue{opacity:1}
+.handwriting-pen{position:absolute;top:0;left:0;width:0;height:0;z-index:3;pointer-events:none;opacity:0;transition:opacity .3s;will-change:transform}
+.handwriting-pen.is-writing{opacity:1}
+.handwriting-pen svg{position:absolute;left:-6.4px;top:-160px;width:88px;height:168px;overflow:visible;filter:drop-shadow(0 3px 7px #0009)}
+.quill-feather{fill:url(#quill-parchment);stroke:#d6b87e;stroke-width:.9}
+.quill-barbs{fill:none;stroke:#b99a60;stroke-width:.65;opacity:.85}
+.quill-spine{fill:none;stroke:#e3ce9d;stroke-width:1.6;stroke-linecap:round}
+.quill-nib{fill:url(#quill-metal);stroke:#c9a15b;stroke-width:.75}
+.quill-slit{fill:none;stroke:#49331d;stroke-width:.7}
+.quill-ink{fill:#f2d9a2;filter:drop-shadow(0 0 3px #e6bc6d)}
+@media(min-width:761px){.school-intertitle .intertitle-name{font-size:clamp(95px,12vw,150px)}}
+@media(max-width:760px){.school-intertitle .handwriting-panel{max-width:430px}.school-intertitle .intertitle-school{font-size:clamp(31px,9.7vw,41px)}.school-intertitle .intertitle-name{font-size:clamp(69px,20.7vw,88px);line-height:1.02;margin:8px 0 28px}.school-intertitle .intertitle-cct{font-size:13px;letter-spacing:.15em}.handwriting-pen svg{left:-4.8px;top:-120px;width:66px;height:126px}}
+@media(max-height:600px){.school-intertitle{padding-block:52px 35px}.school-intertitle .intertitle-flourish{font-size:26px;margin-bottom:7px}.school-intertitle .intertitle-school{font-size:30px}.school-intertitle .intertitle-name{font-size:64px;line-height:.98;margin:5px 0 19px}.school-intertitle .intertitle-cct{font-size:11px}.school-intertitle .intertitle-rule{margin:13px 0 9px}.school-intertitle .intertitle-legend{font-size:17px}.school-intertitle .intertitle-continue{margin-top:14px}}
+@media(prefers-reduced-motion:reduce){.handwriting-pen{display:none!important}.handwriting-line{clip-path:none!important}}

@@ -15,7 +15,8 @@
   <link rel="stylesheet" href="boarding.css?v=9">
   <link rel="stylesheet" href="period.css?v=9">
   <link rel="stylesheet" href="editorial.css?v=9-1">
-  <script src="app.js?v=9" defer></script>
+  <link rel="stylesheet" href="handwriting.css?v=10-1">
+  <script src="app.js?v=10-2" defer></script>
 </head>
 <body class="cover-visible cinematic">
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -40,9 +41,24 @@
     <div class="school-intertitle" id="escuela-intertitulo" hidden aria-live="polite">
       <div class="intertitle-border" aria-hidden="true"></div>
       <div class="intertitle-flourish" aria-hidden="true">❦</div>
-      <p class="intertitle-school">Escuela Primaria</p>
-      <h2 class="intertitle-name">Rafael<br>Ramírez</h2>
-      <p class="intertitle-cct">CCT 15DPR0852X</p>
+      <div class="handwriting-panel">
+        <p class="intertitle-school handwriting-line" data-writing-duration="1700">Escuela Primaria</p>
+        <h2 class="intertitle-name"><span class="handwriting-line" data-writing-duration="1600">Rafael</span><span class="handwriting-line" data-writing-duration="1900">Ramírez</span></h2>
+        <p class="intertitle-cct handwriting-line" data-writing-duration="1300">CCT 15DPR0852X</p>
+        <div class="handwriting-pen" aria-hidden="true">
+          <svg viewBox="0 0 110 210" focusable="false">
+            <defs><linearGradient id="quill-parchment" x1="0" y1="0" x2="1" y2=".6"><stop stop-color="#9f8047"/><stop offset=".32" stop-color="#f9edcd"/><stop offset=".63" stop-color="#d9c292"/><stop offset="1" stop-color="#fff5dc"/></linearGradient><linearGradient id="quill-metal"><stop stop-color="#7d572b"/><stop offset=".5" stop-color="#f1d18d"/><stop offset="1" stop-color="#a87932"/></linearGradient></defs>
+            <g transform="translate(8 200)">
+              <path class="quill-feather" d="M14-36C-5-65 9-101 29-133C49-165 73-188 91-195C97-164 83-126 63-96C46-71 30-52 14-36Z"/>
+              <path class="quill-barbs" d="M17-46 11-71M21-56 12-84M26-67 16-98M33-81 23-113M41-97 31-128M49-113 42-144M58-131 54-160M67-149 67-175M76-167 79-185M20-54 43-57M26-68 54-73M33-83 65-90M41-99 75-109M49-116 83-129M58-134 89-150M68-154 92-171"/>
+              <path class="quill-spine" d="M5-9C16-41 43-100 88-188"/>
+              <path class="quill-nib" d="M3-8 9-26 15-23 8-5 0 0Z"/>
+              <path class="quill-slit" d="M0 0 9-20"/><circle cx="10" cy="-20" r="1.2" fill="#654825"/>
+              <ellipse class="quill-ink" cy=".3" rx="1.7" ry=".8"/>
+            </g>
+          </svg>
+        </div>
+      </div>
       <div class="intertitle-rule" aria-hidden="true"><span></span>✦<span></span></div>
       <p class="intertitle-legend">Nuestra historia vive aquí</p>
       <button class="intertitle-continue" id="continuar-invitacion" type="button">Recibir mi boleto <span aria-hidden="true">↗</span></button>
